@@ -11,12 +11,15 @@ import UIKit
 var todoList = [String]()
 var todoListKey = "todoList"
 
-class FirstViewController: UIViewController, UITableViewDelegate {
+class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
   @IBOutlet var todoListTable: UITableView!
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    todoListTable.delegate = self
+    todoListTable.dataSource = self
+    
     if NSUserDefaults.standardUserDefaults().objectForKey(todoListKey) != nil {
       todoList = NSUserDefaults.standardUserDefaults().objectForKey(todoListKey) as! [String]
     }

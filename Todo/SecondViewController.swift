@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, UITextFieldDelegate {
 
   @IBOutlet var item: UITextField!
   
@@ -20,6 +20,7 @@ class SecondViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    
   }
 
   override func didReceiveMemoryWarning() {
@@ -35,6 +36,6 @@ class SecondViewController: UIViewController {
     item.resignFirstResponder()
     return true
   }
-
+  
 }
 
